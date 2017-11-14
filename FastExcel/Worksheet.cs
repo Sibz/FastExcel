@@ -374,7 +374,7 @@ namespace FastExcel
         {
             foreach (var rowElement in rowElements)
             {
-                if (!rowElement.Descendants().Any(descendant => descendant.Name == "c"))
+                if (!rowElement.Descendants().Any(descendant => descendant.Name.LocalName == "c"))
                     continue;
                 yield return new Row(rowElement, this);
             }
